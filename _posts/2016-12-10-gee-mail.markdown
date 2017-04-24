@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "Gee-Mail Project"
+date:   2016-12-10 20:13:11
+categories: project
+tags: regular
+image: /assets/article_images/2016-12-10-gee-mail/ud_night.jpg
+image2: /assets/article_images/2016-12-10-gee-mail/ud_night-mobile.jpg
+---
+
+# A secure asynchronous (same-machine) message platform
+ 
+# Features
+
+> - Senders and Receivers use a shared passphrase to communicate with each other. 
+> - Messages are encrypted by using SHA-256, salt, stretch and Salsa20
+> - Use a costomized hash function and salt for password encryption.
+
+
+
+[Github link](https://github.com/HanchengZhao/gee-mail)
+
+# Demo video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i1eZEVqvjis" frameborder="0" allowfullscreen></iframe>

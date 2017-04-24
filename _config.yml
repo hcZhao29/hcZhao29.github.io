@@ -1,0 +1,69 @@
+# Build settings
+gems:
+  - jemoji
+  - jekyll-paginate
+
+# Site settings
+title: "Henry Zhao"
+description: > # this means to ignore newlines until "email:"
+   Loving code and design and things in between
+
+email: chancidy@gmail.com
+#blog logo
+logo: "/assets/images/hz_logo.JPG"
+# blog cover
+cover: "/assets/images/hero-background.jpg"
+
+name: 'Henry Zhao'
+author: 'Henry Zhao'
+author_image: "/assets/images/henry.PNG"
+
+paginate:	5
+
+url: "http://hzhao.me" # the base hostname & protocol for your site
+baseurl: ""
+#used to display twitter cards
+twitter_handle: '@chancidy'
+
+#fill in disqus shortname to use disqus
+disqus: henryzhao
+
+# social icons and sharing options
+social:
+  - icon:	twitter
+    url:	https://twitter.com/chancidy
+    desc: Follow me on twitter
+    share_url: http://twitter.com/share
+    share_title: ?text=
+    share_link: "&amp;url="
+
+# kramdown:
+#    input: GFM
+#    hard_wrap: false
+#Conversion
+# markdown:    kramdown
+# highlighter: rouge
+# lsi:         false
+# excerpt_separator: "\n\n"
+# incremental: false
+ # - icon:	facebook
+ #   url:	https://facebook.com/chancidy
+ #   desc: Connect with me facebook
+ #   share_url: https://www.facebook.com/sharer.php
+ #   share_title: ?t=
+ #   share_link: "&amp;u="
+
+  - icon:	github
+    url:	https://github.com/hanchengzhao
+    desc:	Fork me on github
+    share_url:
+    share_title:
+    share_link:
+
+#  - icon:	google-plus
+#    url:	https://google.com/???
+#    desc:	Add me on google+
+#    share_url:
+#    share_title:
+#    share_link:
+port: 8080

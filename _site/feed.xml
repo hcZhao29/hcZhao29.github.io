@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Henry Zhao</title>
+    <description>Loving code and design and things in between
+</description>
+    <link>http://hzhao.me/</link>
+    <atom:link href="http://hzhao.me/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Thu, 23 Mar 2017 13:53:40 +0000</pubDate>
+    <lastBuildDate>Thu, 23 Mar 2017 13:53:40 +0000</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Javascript Wired Parts</title>
+        <description>&lt;h1 id=&quot;javascript-design-flaws-and-wired-parts&quot;&gt;Javascript design flaws and wired parts&lt;/h1&gt;
+
+&lt;h1 id=&quot;javascript-flaws&quot;&gt;JavaScript flaws&lt;/h1&gt;
+
+&lt;p&gt;JavaScript is the most dominant programming language for the web. Powerful as it is, JavaScript has many design flaws that may cause confusions for both newbie and seasoned developers . So it’s worth making a summary here.&lt;/p&gt;
+
+&lt;h3 id=&quot;data-type-and-variables&quot;&gt;Data type and variables&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;NaN&lt;/code&gt; can not be compared with any number, like &lt;code&gt;NaN === NaN; // false&lt;/code&gt;, the only way to check is by using &lt;code&gt;isNaN()&lt;/code&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nb&quot;&gt;isNaN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;NaN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code&gt;null&lt;/code&gt; and &lt;code&gt;undefined&lt;/code&gt;: The undefined value is a primitive value used when a variable has not been assigned a value. The null value is a primitive value that represents the null, empty, or non-existent reference.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If a variable is defined without &lt;code&gt;var&lt;/code&gt;, it is set to be a global variable, which may cause some errors that are hard to debug. This problem can be solved by adding &lt;code&gt;&#39;use strict&#39;;&lt;/code&gt; in the first line&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;strings&quot;&gt;Strings&lt;/h3&gt;
+&lt;p&gt;Strings are imutable, like&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Test&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;X&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;     
+&lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// s is still &amp;#39;Test&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;conditions&quot;&gt;Conditions&lt;/h3&gt;
+&lt;p&gt;JavaScript uses &lt;code&gt;if () { ... } else { ... }&lt;/code&gt; to set conditions. But if there is only one statement in a block, &lt;code&gt;{}&lt;/code&gt; can be removed. like&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;adult&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;teenager&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;However, there are risks doing this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;adult&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;age &amp;lt; 18&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;teenager&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// this line is actually not inside else&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;So it is better to always include &lt;code&gt;{}&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;loops&quot;&gt;Loops&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;“foreach” vs “for of” vs “for in”
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;foreach&lt;/code&gt; is an method that is available only in Array objects. It allows you to iterate through elements of an array. When invoked it takes a callback function and invokes the callback once for every array element. The callback can access both index and value of the array elements. foreach is available only for looping arrays.&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;for of&lt;/code&gt; is a new way for iterating collections. Its introduced in ES6. Earlier you had to use for or while loop to iterate through elements of an collection. For for of to work on an collection, the collection must have an [Symbol.iterator] property.&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;for in&lt;/code&gt; is used to loop through properties of an object. It can be any object. for in allows you to access the keys of the object but doesn’t provide reference to the values. In JavaScript object properties themselves have internal properties. One of the internal properties is [[Enumerable]]. for in will only walkthrough a property if it has [[Enumerbale]] set to true. It not used to iterate elements of an collection rather used to iterate properties of objects. For example:&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;C&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;#39;0&amp;#39;, &amp;#39;1&amp;#39;, &amp;#39;2&amp;#39;&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;#39;A&amp;#39;, &amp;#39;B&amp;#39;, &amp;#39;C&amp;#39;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;map-and-set&quot;&gt;Map and Set&lt;/h3&gt;
+&lt;p&gt;In JavaScript, Map can be inplemented with Object&lt;code&gt;{}&lt;/code&gt;, buy the key has to be a string. So ES6 introduced a new type &lt;code&gt;Map&lt;/code&gt;.
+&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map&quot;&gt;Map Reference&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;objects&quot;&gt;Objects&lt;/h3&gt;
+&lt;p&gt;The property name has to be a valid name in order to let &lt;code&gt;Objects.property&lt;/code&gt; to access. For example,&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;me&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;henry&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&amp;quot;university&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;UD&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;&quot;university&quot;&lt;/code&gt; is not a valid property name here, so it has to be accessed by
+&lt;code&gt;me[&#39;university&#39;]&lt;/code&gt;. But name can be accessed by &lt;code&gt;me.name&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;“this” key word:
+  The this object is bound at runtime based on the context in which a function is executed:
+    &lt;ul&gt;
+      &lt;li&gt;when used inside global functions,this is equal to window in nostrict mode and undefinedin strict mode.&lt;/li&gt;
+      &lt;li&gt;whereas this is equal to the object when called as an object method.&lt;/li&gt;
+      &lt;li&gt;as a constructor&lt;/li&gt;
+      &lt;li&gt;call and apply&lt;/li&gt;
+      &lt;li&gt;bound functions&lt;/li&gt;
+      &lt;li&gt;as dom event handler&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;this will point to global object:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newvariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;   
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newvariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;When a global function is called, &lt;code&gt;this&lt;/code&gt;will point to the window. Likewise, ‘this’ inside a function which is inside another function will be attached to the global object.&lt;/p&gt;
+
+&lt;p&gt;In order to solve this problem, “self” or “that” is introduced:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;The c object&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        
+        &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Updated c object&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;newname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;setname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Updated again! The c object&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Self points to the object c. When ‘setname’ is called, the js will look at the scope chain and find c.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 07 Feb 2017 22:13:11 +0000</pubDate>
+        <link>http://hzhao.me/2017/02/07/JavaScript-Flaws.html</link>
+        <guid isPermaLink="true">http://hzhao.me/2017/02/07/JavaScript-Flaws.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Book Order Bots With Selenium</title>
+        <description>&lt;h1 id=&quot;bots-that-automatically-place-orders-by-getting-json-file&quot;&gt;Bots that automatically place orders by getting JSON file&lt;/h1&gt;
+
+&lt;h1 id=&quot;features&quot;&gt;Features&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Built bots based on Selenium with Python to place book orders by automating browser behavior. Bots were able to login, fill the shipment form, choose different ship options and record the total order price. A super bot would accept an order in JSON format and call each bot by integrating APIs.&lt;/li&gt;
+    &lt;li&gt;Used Selenium IDE to record a generic user behavior on Firefox and generate unit test suites in Python. Used Selenium WebDriver to scale and distribute scripts across many environments.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;demo-for-textbookscom-bot&quot;&gt;Demo for textbooks.com bot&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/article_images/2017-1-1-bookbot/textbook.gif&quot; alt=&quot;textbook bot&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;story-behind-it&quot;&gt;Story behind it&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;It was a pretty amazing experience that 6 of us got together and built 8 bots for bookbandit.com within 4 days. Before that, I had never built a bot and only knew that Selenium was used for browser testing.&lt;/p&gt;
+
+&lt;p&gt;Since Andy was going to deliver 8 bots to the client on Jan 2nd, and we started on Dec 27th, we had to work day and night to complete everything from scratch. We actually built a sample version of bots, but the styles varied, we had to use selenium IDE to refactor all bots.&lt;/p&gt;
+
+&lt;p&gt;We met all kinds of problems in the process, the biggest one coming from cheggs.com, which would recognize bots behavior if we made bots move too fast or sent requests too many times from the same IP address. So we had to set &lt;code&gt;time.sleep()&lt;/code&gt;to make a pause. Other problems came from selecting HTML tags, choosing different paths for different UIs, etc.&lt;/p&gt;
+
+&lt;p&gt;Teddy said he used Selenium to do ‘evil things’ to get concerts tickets, which is what Selenium is so good at. I knew this kind of exploits of bots before, but I did not realize this was how they worked.&lt;/p&gt;
+
+&lt;p&gt;Highly-pressed but rewarding journey anyway.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 02 Jan 2017 20:13:11 +0000</pubDate>
+        <link>http://hzhao.me/project/2017/01/02/bookbot.html</link>
+        <guid isPermaLink="true">http://hzhao.me/project/2017/01/02/bookbot.html</guid>
+        
+        
+        <category>project</category>
+        
+      </item>
+    
+      <item>
+        <title>Gee-Mail Project</title>
+        <description>&lt;h1 id=&quot;a-secure-asynchronous-same-machine-message-platform&quot;&gt;A secure asynchronous (same-machine) message platform&lt;/h1&gt;
+
+&lt;h1 id=&quot;features&quot;&gt;Features&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Senders and Receivers use a shared passphrase to communicate with each other.&lt;/li&gt;
+    &lt;li&gt;Messages are encrypted by using SHA-256, salt, stretch and Salsa20&lt;/li&gt;
+    &lt;li&gt;Use a costomized hash function and salt for password encryption.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/HanchengZhao/gee-mail&quot;&gt;Github link&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;demo-video&quot;&gt;Demo video&lt;/h1&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/i1eZEVqvjis&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Sat, 10 Dec 2016 20:13:11 +0000</pubDate>
+        <link>http://hzhao.me/project/2016/12/10/gee-mail.html</link>
+        <guid isPermaLink="true">http://hzhao.me/project/2016/12/10/gee-mail.html</guid>
+        
+        <category>regular</category>
+        
+        
+        <category>project</category>
+        
+      </item>
+    
+      <item>
+        <title>Minesweeper Project</title>
+        <description>&lt;h1 id=&quot;command-line-minesweeper-written-in-c&quot;&gt;Command-Line Minesweeper. Written in C++.&lt;/h1&gt;
+
+&lt;h1 id=&quot;how-to-play&quot;&gt;How to play&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Set the size of game board&lt;/li&gt;
+  &lt;li&gt;Pick a square by inputting the row and column number&lt;/li&gt;
+  &lt;li&gt;Click any square, preferably towards the middle&lt;/li&gt;
+  &lt;li&gt;The first square clicked is never a bomb&lt;/li&gt;
+  &lt;li&gt;Click known safe squares&lt;/li&gt;
+  &lt;li&gt;You lose if you pick a square of mine&lt;/li&gt;
+  &lt;li&gt;You win if all squares but mines are uncovered&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/YeWang0/Mine-sweeper&quot;&gt;Github link&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;demo-video&quot;&gt;Demo video&lt;/h1&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/IOi0Z2NH95A&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Fri, 09 Dec 2016 22:46:11 +0000</pubDate>
+        <link>http://hzhao.me/project/2016/12/09/minesweeper.html</link>
+        <guid isPermaLink="true">http://hzhao.me/project/2016/12/09/minesweeper.html</guid>
+        
+        <category>regular</category>
+        
+        
+        <category>project</category>
+        
+      </item>
+    
+      <item>
+        <title>Markovian Chain Project</title>
+        <description>&lt;h1 id=&quot;a-markov-chain-text-generator-by-crawling-tweets-from-a-username&quot;&gt;A Markov Chain text generator by Crawling tweets from a username&lt;/h1&gt;
+
+&lt;h1 id=&quot;features&quot;&gt;Features&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;A bot which accepts username and generate tweets in that user’s style, implemented by simple Markov Chain text generator.&lt;/li&gt;
+    &lt;li&gt;Markov chain length can be customed in order to determine how related the words should be.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/HanchengZhao/Markovian-tweets&quot;&gt;Github link&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;demo-video&quot;&gt;Demo video&lt;/h1&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/V8EDltZLS5g&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Thu, 08 Dec 2016 20:13:11 +0000</pubDate>
+        <link>http://hzhao.me/project/2016/12/08/Markovian-Chain.html</link>
+        <guid isPermaLink="true">http://hzhao.me/project/2016/12/08/Markovian-Chain.html</guid>
+        
+        <category>regular</category>
+        
+        
+        <category>project</category>
+        
+      </item>
+    
+      <item>
+        <title>Css projects</title>
+        <description>&lt;h1 id=&quot;student-dashboard&quot;&gt;Student Dashboard&lt;/h1&gt;
+
+&lt;iframe height=&quot;518&quot; scrolling=&quot;no&quot; title=&quot;Dashboard bootstrap3&quot; src=&quot;//codepen.io/HanchengZhao-1471862086/embed/dOZmLJ/?height=518&amp;amp;theme-id=0&amp;amp;default-tab=result&amp;amp;embed-version=2&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/HanchengZhao-1471862086/pen/dOZmLJ/&quot;&gt;Dashboard bootstrap3&lt;/a&gt; by Henry_Z (&lt;a href=&quot;http://codepen.io/HanchengZhao-1471862086&quot;&gt;@HanchengZhao-1471862086&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/iframe&gt;
+</description>
+        <pubDate>Thu, 17 Nov 2016 23:11:11 +0000</pubDate>
+        <link>http://hzhao.me/2016/11/17/CSS-Projects.html</link>
+        <guid isPermaLink="true">http://hzhao.me/2016/11/17/CSS-Projects.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
