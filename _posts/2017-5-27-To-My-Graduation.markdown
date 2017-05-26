@@ -4,8 +4,8 @@ title:  "To my graduation"
 date:   2017-5-27 12:23:22
 categories:
 tags:
-image: /assets/article_images/2017-5-27/IMG_0687.JPG
-image2: /assets/article_images/2017-5-27/IMG_0687.JPG
+image: /assets/article_images/2017-5-27/campus.JPG
+image2: /assets/article_images/2017-5-27/campus.JPG
 ---
 >This is not the end, this is not even the beginning of the end, but perhaps it is the end of beginning.
 
