@@ -7,7 +7,7 @@ tags:
 image: /assets/article_images/2017-5-27/IMG_0687.JPG
 image2: /assets/article_images/2017-5-27/IMG_0687.JPG
 ---
-# Time for the end of beginning
+>This is not the end, this is not even the beginning of the end, but perhaps it is the end of beginning.
 
 ![Graduation](/assets/article_images/2017-5-27/graduation.jpg)
 
@@ -28,4 +28,4 @@ Another person I respected the most was Andy Novocin. I considered him as my men
 
 
 
-If there is a lesson that I have learned in past 2 years, it must be--always keep an open mind to things you don't know before, you may love it in the end. People tend to judge emerging things based on its appearance, but when we take the time to think about what is behind, we will always explore something new and worthwhile. As Churchill said, this is not the end, this is not even the beginning of the end, but perhaps it is the end of beginning.
+If there is a lesson that I have learned in past 2 years, it must be--always keep an open mind to things you don't know before, you may love it in the end. People tend to judge emerging things based on its appearance, but when we take the time to think about what is behind, we will always explore something new and worthwhile.
