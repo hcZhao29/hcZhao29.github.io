@@ -4,8 +4,8 @@ title:  "Python Collections and Tricks"
 date:   2017-5-22 14:13:22
 categories:
 tags:
-image: /assets/article_images/2017-5-22-Python-Collections/campus.JPG
-image2: /assets/article_images/2017-5-22-Python-Collections/campus.JPG
+image: /assets/article_images/2017-5-22-Python-Collections/IMG_0687.JPG
+image2: /assets/article_images/2017-5-22-Python-Collections/IMG_0687.JPG
 ---
 
 # Being pythonic
