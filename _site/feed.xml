@@ -6,8 +6,8 @@
 </description>
     <link>http://hzhao.me/</link>
     <atom:link href="http://hzhao.me/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 26 May 2017 14:10:48 -0400</pubDate>
-    <lastBuildDate>Fri, 26 May 2017 14:10:48 -0400</lastBuildDate>
+    <pubDate>Sat, 03 Jun 2017 21:21:07 -0400</pubDate>
+    <lastBuildDate>Sat, 03 Jun 2017 21:21:07 -0400</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -21,7 +21,7 @@
 &lt;p&gt;I tend to make a summary at major moments in my life. Convocation is at tonight and commencement is tomorrow, and this is it.&lt;/p&gt;
 
 &lt;p&gt;If I look back at myself 2 years ago, I would feel like looking at a different person in terms of things I am working on daily. I’m not saying I am so knowledgeable right now, I just knew nothing about programming at all. I still remember the first class I took in UD–I watched the professor ssh to a server, operate files using bash command and using Vim to edit codes fluently and I had no idea what it was. I learned a little bit C in my undergraduate, but I only knew you had to include a certain library to print “hello world”. Our first assignment had to be submitted in tar file compressed using a command, I did not even know I had to cd into the file folder to do that, but actually, I did not know what tar file was. The course was mainly about high-performance computing and our final project was to parallelize radix sort on Cuda. It assumed that students knew basic algorithms and C programming, but I did not even know what radix sort was, let alone optimize it. To be honest, I did not know any other sorting algorithms until I took the algorithm class the second semester.
-But after endless online tutorials and office hours, we finally turned in our report and got an A on that. Well, it is easy talking about the whole experience afterward, but you know what you have been through.&lt;/p&gt;
+But after endless online tutorials and office hours, we finally turned in our report and got an A on that. Well, it is easy talking about the whole experience afterwards, but you know what you have been through.&lt;/p&gt;
 
 &lt;p&gt;However, it was until the first winter session when Will took me to Andy’s front-end class that I found this was what I was looking for. Nothing had been better than the instant response and sense of accomplishment you received when coding. Then I embarked on a wonderful journey of web development and for the first time, I realized I loved coding so much. Ever since then, the Mac room at the lower level of the library has been the place that I spent most of my spare time. Even now, I am typing these words here. Sometimes, I am the only one in the room, especially on Friday nights, and I enjoyed it. Certainly, I could and should go to more parties and make more friends, but I felt like that I didn’t even have enough time for myself, I really could not afford time for someone I don’t know. That being said, I did not feel lonely at all, I made a lot of incredible friends and had all kinds of brand new experience–like shooting guns, visiting countless museums and gazing at arts that I have only seen on books. Here is what I love here, you have a chance to do anything you love, of course legally, you do not have to worry about that you might miss something–it is always there, you only have to focus on the most important things right now and go for it whenever you like.&lt;/p&gt;
 
@@ -33,7 +33,7 @@ But after endless online tutorials and office hours, we finally turned in our re
 
 &lt;p&gt;&lt;img src=&quot;/assets/article_images/2017-5-27/andy.jpg&quot; alt=&quot;Andy and I&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;If there is a lesson that I have learned in past 2 years, it must be–always keep an open mind to things you don’t know before, you may love it in the end. People tend to judge emerging things based on its appearance, but when we take the time to think about what is behind, we will always explore something new and worthwhile.&lt;/p&gt;
+&lt;p&gt;If there is a lesson that I have learned in past 2 years, it must be–always keep an open mind to things you don’t know before, you may love it in the end. People tend to judge emerging things based on their appearance, but when we take the time to think about what is behind, we will always explore something new and worthwhile.&lt;/p&gt;
 </description>
         <pubDate>Sat, 27 May 2017 08:23:22 -0400</pubDate>
         <link>http://hzhao.me/2017/05/27/To-My-Graduation.html</link>
@@ -164,14 +164,24 @@ From doc:&lt;/p&gt;
 &lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;blue&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;yellow&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;tricks&quot;&gt;Tricks&lt;/h2&gt;
-&lt;p&gt;(to be filled)
-### sorted()&lt;/p&gt;
+&lt;p&gt;(to be filled)&lt;/p&gt;
+
+&lt;h3 id=&quot;sorted&quot;&gt;sorted()&lt;/h3&gt;
 
 &lt;h3 id=&quot;enumerate&quot;&gt;enumerate()&lt;/h3&gt;
 
+&lt;p&gt;It is an efficient way to loop through a list and get the index and value at the same time.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sequence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# start is optional, from 0 as default&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;seasons&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Spring&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Summer&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Fall&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Winter&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seasons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Spring&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Summer&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Fall&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Winter&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seasons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Spring&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Summer&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Fall&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Winter&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;h3 id=&quot;zip&quot;&gt;zip()&lt;/h3&gt;
 
-&lt;h2 id=&quot;section&quot;&gt;#&lt;/h2&gt;
+&lt;h3 id=&quot;list-comprehesion&quot;&gt;list comprehesion&lt;/h3&gt;
 </description>
         <pubDate>Mon, 22 May 2017 10:13:22 -0400</pubDate>
         <link>http://hzhao.me/2017/05/22/Python-Collections-And-Tricks.html</link>

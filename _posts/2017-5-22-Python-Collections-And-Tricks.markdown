@@ -115,10 +115,23 @@ This technique is simpler and faster than an equivalent technique using dict.set
 
 ## Tricks
 (to be filled)
+
 ### sorted()
 
 ### enumerate()
 
+It is an efficient way to loop through a list and get the index and value at the same time.
+
+{% highlight python %}
+enumerate(sequence, start=0) # start is optional, from 0 as default
+>>> seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+>>> list(enumerate(seasons))
+[(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
+>>> list(enumerate(seasons, start=1))
+[(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')]
+
+{% endhighlight %}
+
 ### zip()
 
-###
+### list comprehesion
