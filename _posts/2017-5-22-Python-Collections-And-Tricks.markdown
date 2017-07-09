@@ -110,6 +110,7 @@ This technique is simpler and faster than an equivalent technique using dict.set
 [('blue', [2, 4]), ('red', [1]), ('yellow', [1, 3])]
 {% endhighlight %}
 
+### heapq
 
 
 
@@ -135,3 +136,37 @@ enumerate(sequence, start=0) # start is optional, from 0 as default
 ### zip()
 
 ### list comprehesion
+
+Python provides a very natural way to construct list, no matter what dimension.
+
+##### Basic syntax:
+
+{% highlight python %}
+[ expression for item in list if conditional ]
+{% endhighlight %}
+
+which is equivalent to
+
+{% highlight python %}
+
+for item in list:
+    if conditional:
+        expression
+
+{% endhighlight %}
+
+so to initialize an empty 2D array in python is:
+{% highlight python %}
+
+# Creates a list containing 5 lists, each of 8 items, all set to 0
+w, h = 8, 5;
+Matrix = [[0 for x in range(w)] for y in range(h)]
+
+{% endhighlight %}
+
+but note here, *append* does not work as expected in list comprehension, it only mutates array rather than returns value:
+{% highlight python %}
+a = [[1,2],[3,4],[5,6]]
+a = [x.append('a') for x in a]
+# return  [None,None,None]
+{% endhighlight %}
