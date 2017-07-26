@@ -6,9 +6,80 @@
 </description>
     <link>http://hzhao.me/</link>
     <atom:link href="http://hzhao.me/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 09 Jul 2017 15:06:18 -0400</pubDate>
-    <lastBuildDate>Sun, 09 Jul 2017 15:06:18 -0400</lastBuildDate>
+    <pubDate>Tue, 25 Jul 2017 22:22:49 -0400</pubDate>
+    <lastBuildDate>Tue, 25 Jul 2017 22:22:49 -0400</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Cloud Based Web Tools For VIP Programs</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Reactjs, Firebase, Cloud Functions, serverless architecture, material ui&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The project that I have been working on recently is a cloud-based web tool for ASU to manage new teams, announcements, student/project application and peer evaluation. &lt;a href=&quot;https://github.com/HanchengZhao/VIP-web&quot;&gt;Github link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;So it is basically a CMS(content management system), but far more lightweight than Drupal, Sharepoint or WordPress. It is still an SPA (single page application), yet a huge upgrade of my last year’s peer evaluation tool for UD.&lt;/p&gt;
+
+&lt;p&gt;It has been a fun journey so far and I have tried many brand new stuffs and got new experience, so it is worth recording some thoughts along the way.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-cloud-based-serverless-architecture&quot;&gt;Why cloud-based serverless architecture?&lt;/h3&gt;
+
+&lt;p&gt;This is a fundamental question why we choose firebase as our backend or even infrastructure. &lt;br /&gt;
+First of all, serveless does not mean &lt;strong&gt;“no server at all”&lt;/strong&gt;, it only means that end users or developers no longer need to build or maintain their own servers. Rather, they borrow microservices that are wrapped from those giant tech companies servers, like Amazon Web Service(AWS) or Google Cloud Platform. Thus, developers can focus only on the app logic or ui side, which saves so much money and time especially for startups. Those platform usually provide all kinds of services from database storage to monitoring/testing, web hosting, email/message notification and cloud functions. This ‘all in one’ solution is so much more handy for developers.&lt;/p&gt;
+
+&lt;p&gt;Besides, the selling point of serverless is that “you only pay the compute that you need”. There is no waiting time for servers to start, they are just constantly running and you only account for the computing power that you need. Nowadays, people share cars, houses, now even the computing power. &lt;br /&gt;
+Of course serverless architecture is not a panacea, but it meets our needs so far.&lt;/p&gt;
+
+&lt;h3 id=&quot;then-why-firebase&quot;&gt;Then why Firebase?&lt;/h3&gt;
+
+&lt;p&gt;Simply because it provides the exact service that we need for our app. We need a Nosql database, a secure authentication system to implement role-based access control, a storage service to save posters or team logos, an easy-to-deploy hosting service, and backend cloud functions to handle light logic, sanitize data or send emails for us. Besides, it has nice ui and easy-to-use command line tool. After being acquired by Google last summer, it has stronger back and is well integrated into google cloud platform.&lt;/p&gt;
+
+&lt;h2 id=&quot;implementations&quot;&gt;Implementations&lt;/h2&gt;
+
+&lt;h3 id=&quot;schedule-cron-tasks-with-cloud-functions&quot;&gt;Schedule (Cron) tasks with Cloud Functions&lt;/h3&gt;
+
+&lt;p&gt;Cloud functions are so powerful that they can serve as a fast-loading server to deal with database and storage. However, they are usually triggered by events, such as &lt;code&gt;onWrite&lt;/code&gt; action.&lt;/p&gt;
+
+&lt;p&gt;Firebase blog has a article explaining using App Engine from google cloud platform to do it:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://firebase.googleblog.com/2017/03/how-to-schedule-cron-jobs-with-cloud.html&quot;&gt;How to Schedule (Cron) Jobs with Cloud Functions for Firebase&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here, we choose the site &lt;a href=&quot;https://cron-job.org/en/&quot;&gt;Cron Job&lt;/a&gt; to handle cron work for us. It has user-friendly interface and is easy to configure cron jobs.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/article_images/2017-7-19-Web-tools/cron_job.png&quot; alt=&quot;cron job&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here we set the cron job to run once a day to remove overdue announcement and put scheduled ones in the page. It is important to add a key parameter after the url to avoid malicious access.&lt;/p&gt;
+
+&lt;h3 id=&quot;deploy&quot;&gt;deploy&lt;/h3&gt;
+&lt;h3 id=&quot;pagination&quot;&gt;pagination&lt;/h3&gt;
+&lt;h3 id=&quot;auth&quot;&gt;auth&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;only redirect in the first login
+    &lt;ul&gt;
+      &lt;li&gt;sessionstorage&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;react-router&quot;&gt;react-router&lt;/h2&gt;
+&lt;h3 id=&quot;conditional-rendering&quot;&gt;conditional rendering&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;how to go back to last path with last state&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;mobx&quot;&gt;mobx&lt;/h2&gt;
+
+&lt;h2 id=&quot;announcement&quot;&gt;announcement&lt;/h2&gt;
+&lt;h3 id=&quot;debounce&quot;&gt;debounce&lt;/h3&gt;
+</description>
+        <pubDate>Wed, 19 Jul 2017 08:23:22 -0400</pubDate>
+        <link>http://hzhao.me/2017/07/19/Cloud-Based-Web-Tools-For-VIP.html</link>
+        <guid isPermaLink="true">http://hzhao.me/2017/07/19/Cloud-Based-Web-Tools-For-VIP.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>To my graduation</title>
@@ -20,7 +91,7 @@
 
 &lt;p&gt;I tend to make a summary at major moments in my life. Convocation is at tonight and commencement is tomorrow, and this is it.&lt;/p&gt;
 
-&lt;p&gt;If I look back at myself 2 years ago, I would feel like looking at a different person in terms of things I am working on daily. I’m not saying I am so knowledgeable right now, I just knew nothing about programming at all. I still remember the first class I took in UD–I watched the professor ssh to a server, operate files using bash command and using Vim to edit codes fluently and I had no idea what it was. I learned a little bit C in my undergraduate, but I only knew you had to include a certain library to print “hello world”. Our first assignment had to be submitted in tar file compressed using a command, I did not even know I had to cd into the file folder to do that, but actually, I did not know what tar file was. The course was mainly about high-performance computing and our final project was to parallelize radix sort on Cuda. It assumed that students knew basic algorithms and C programming, but I did not even know what radix sort was, let alone optimize it. To be honest, I did not know any other sorting algorithms until I took the algorithm class the second semester.
+&lt;p&gt;If I look back at myself 2 years ago, I would feel like looking at a different person in terms of things I am working on daily. I’m not saying I am so knowledgeable right now, I just knew nothing about programming at all. I still remember the first class I took in UD–I watched the professor ssh to a server, operate files using bash command and using Vim to edit codes fluently and I had no idea what it was. I learned a little bit C in my undergraduate, but I only knew you had to include a certain library to print “hello world”. Our first assignment had to be submitted in tar file compressed using a command, I did not even know I had to cd into the file folder to do that, but actually, I did not know what tar file was. The course was mainly about high-performance computing and our final project was to parallelize radix sort on Cuda. It assumed that students knew basic algorithms and C programming, but I did not even know what radix sort was, let alone optimize it. To be honest, I did not know any other sorting algorithms until I took the algorithm class the second semester.&lt;br /&gt;
 But after endless online tutorials and office hours, we finally turned in our report and got an A on that. Well, it is easy talking about the whole experience afterwards, but you know what you have been through.&lt;/p&gt;
 
 &lt;p&gt;However, it was until the first winter session when Will took me to Andy’s front-end class that I found this was what I was looking for. Nothing had been better than the instant response and sense of accomplishment you received when coding. Then I embarked on a wonderful journey of web development and for the first time, I realized I loved coding so much. Ever since then, the Mac room at the lower level of the library has been the place that I spent most of my spare time. Even now, I am typing these words here. Sometimes, I am the only one in the room, especially on Friday nights, and I enjoyed it. Certainly, I could and should go to more parties and make more friends, but I felt like that I didn’t even have enough time for myself, I really could not afford time for someone I don’t know. That being said, I did not feel lonely at all, I made a lot of incredible friends and had all kinds of brand new experience–like shooting guns, visiting countless museums and gazing at arts that I have only seen on books. Here is what I love here, you have a chance to do anything you love, of course legally, you do not have to worry about that you might miss something–it is always there, you only have to focus on the most important things right now and go for it whenever you like.&lt;/p&gt;
@@ -36,8 +107,8 @@ But after endless online tutorials and office hours, we finally turned in our re
 &lt;p&gt;If there is a lesson that I have learned in past 2 years, it must be–always keep an open mind to things you don’t know before, you may love it in the end. People tend to judge emerging things based on their appearance, but when we take the time to think about what is behind, we will always explore something new and worthwhile.&lt;/p&gt;
 </description>
         <pubDate>Sat, 27 May 2017 08:23:22 -0400</pubDate>
-        <link>http://hzhao.me/2017/05/27/To-My-Graduation.html</link>
-        <guid isPermaLink="true">http://hzhao.me/2017/05/27/To-My-Graduation.html</guid>
+        <link>http://hzhao.me/2017/05/27/To-My-Graduation.1.html</link>
+        <guid isPermaLink="true">http://hzhao.me/2017/05/27/To-My-Graduation.1.html</guid>
         
         
       </item>
@@ -102,7 +173,7 @@ But after endless online tutorials and office hours, we finally turned in our re
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;extendleft(iterable):
+    &lt;p&gt;extendleft(iterable):&lt;br /&gt;
 Extend the left side of the deque by appending elements from iterable. Note, the series of left appends results in reversing the order of elements in the iterable argument.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
@@ -141,7 +212,7 @@ Extend the left side of the deque by appending elements from iterable. Note, the
 &lt;span class=&quot;n&quot;&gt;OrderedDict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;pear&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;apple&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;orange&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;banana&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)])&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;defaultdict&quot;&gt;defaultdict&lt;/h3&gt;
-&lt;p&gt;This datatype provides a factory function to store customized key-value pairs into dictionaries.
+&lt;p&gt;This datatype provides a factory function to store customized key-value pairs into dictionaries.&lt;br /&gt;
 From doc:&lt;/p&gt;
 
 &lt;p&gt;It is easy to group a sequence of key-value pairs into a dictionary of lists:&lt;/p&gt;
@@ -286,7 +357,7 @@ From doc:&lt;/p&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;map-and-set&quot;&gt;Map and Set&lt;/h3&gt;
-&lt;p&gt;In JavaScript, Map can be inplemented with Object&lt;code&gt;{}&lt;/code&gt;, buy the key has to be a string. So ES6 introduced a new type &lt;code&gt;Map&lt;/code&gt;.
+&lt;p&gt;In JavaScript, Map can be inplemented with Object&lt;code&gt;{}&lt;/code&gt;, buy the key has to be a string. So ES6 introduced a new type &lt;code&gt;Map&lt;/code&gt;.&lt;br /&gt;
 &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map&quot;&gt;Map Reference&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;objects&quot;&gt;Objects&lt;/h3&gt;
@@ -297,11 +368,11 @@ From doc:&lt;/p&gt;
     &lt;span class=&quot;s2&quot;&gt;&amp;quot;university&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;UD&amp;quot;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;code&gt;&quot;university&quot;&lt;/code&gt; is not a valid property name here, so it has to be accessed by
+&lt;p&gt;&lt;code&gt;&quot;university&quot;&lt;/code&gt; is not a valid property name here, so it has to be accessed by&lt;br /&gt;
 &lt;code&gt;me[&#39;university&#39;]&lt;/code&gt;. But name can be accessed by &lt;code&gt;me.name&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;“this” key word:
+  &lt;li&gt;“this” key word:&lt;br /&gt;
   The this object is bound at runtime based on the context in which a function is executed:
     &lt;ul&gt;
       &lt;li&gt;when used inside global functions,this is equal to window in nostrict mode and undefinedin strict mode.&lt;/li&gt;

@@ -28,6 +28,13 @@ twitter_handle: '@chancidy'
 #fill in disqus shortname to use disqus
 disqus: henryzhao
 
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  
 # social icons and sharing options
 social:
   - icon:	twitter
@@ -37,9 +44,7 @@ social:
     share_title: ?text=
     share_link: "&amp;url="
 
-# kramdown:
-#    input: GFM
-#    hard_wrap: false
+
 #Conversion
 # markdown:    kramdown
 # highlighter: rouge
