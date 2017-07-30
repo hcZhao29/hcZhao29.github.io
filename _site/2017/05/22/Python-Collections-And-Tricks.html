@@ -245,6 +245,11 @@ From doc:</p>
 <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
 <span class="c"># return  [None,None,None]</span></code></pre></div>
 
+<p>another example:<br />
+<script src="https://gist.github.com/HanchengZhao/69e152c12509806653061c95c66d0ada.js"></script></p>
+
+<p>Here it returns the first node in a value list of a dictionary that has more than 1 node. <code>if node[1]</code> will cause <code>IndexError: list index out of range</code>, but <code>if node[1:]</code> works.</p>
+
         </section>
         <footer class="post-footer">
           <section class="share">

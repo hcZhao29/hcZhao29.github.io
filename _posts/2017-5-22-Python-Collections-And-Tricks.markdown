@@ -170,3 +170,8 @@ a = [[1,2],[3,4],[5,6]]
 a = [x.append('a') for x in a]
 # return  [None,None,None]
 {% endhighlight %}
+
+another example:
+<script src="https://gist.github.com/HanchengZhao/69e152c12509806653061c95c66d0ada.js"></script>
+
+Here it returns the first node in a value list of a dictionary that has more than 1 node. `if node[1]` will cause `IndexError: list index out of range`, but `if node[1:]` works.

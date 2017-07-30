@@ -6,8 +6,8 @@
 </description>
     <link>http://hzhao.me/</link>
     <atom:link href="http://hzhao.me/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 25 Jul 2017 22:22:49 -0400</pubDate>
-    <lastBuildDate>Tue, 25 Jul 2017 22:22:49 -0400</lastBuildDate>
+    <pubDate>Sun, 30 Jul 2017 16:58:34 -0400</pubDate>
+    <lastBuildDate>Sun, 30 Jul 2017 16:58:34 -0400</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -27,7 +27,7 @@
 &lt;p&gt;This is a fundamental question why we choose firebase as our backend or even infrastructure. &lt;br /&gt;
 First of all, serveless does not mean &lt;strong&gt;“no server at all”&lt;/strong&gt;, it only means that end users or developers no longer need to build or maintain their own servers. Rather, they borrow microservices that are wrapped from those giant tech companies servers, like Amazon Web Service(AWS) or Google Cloud Platform. Thus, developers can focus only on the app logic or ui side, which saves so much money and time especially for startups. Those platform usually provide all kinds of services from database storage to monitoring/testing, web hosting, email/message notification and cloud functions. This ‘all in one’ solution is so much more handy for developers.&lt;/p&gt;
 
-&lt;p&gt;Besides, the selling point of serverless is that “you only pay the compute that you need”. There is no waiting time for servers to start, they are just constantly running and you only account for the computing power that you need. Nowadays, people share cars, houses, now even the computing power. &lt;br /&gt;
+&lt;p&gt;Besides, the selling point of serverless is that &lt;strong&gt;“you only pay the compute that you need”&lt;/strong&gt;. There is no waiting time for servers to start, they are just constantly running and you only account for the computing power that you need. Nowadays, people share cars, houses, now even the computing power. &lt;br /&gt;
 Of course serverless architecture is not a panacea, but it meets our needs so far.&lt;/p&gt;
 
 &lt;h3 id=&quot;then-why-firebase&quot;&gt;Then why Firebase?&lt;/h3&gt;
@@ -107,8 +107,8 @@ But after endless online tutorials and office hours, we finally turned in our re
 &lt;p&gt;If there is a lesson that I have learned in past 2 years, it must be–always keep an open mind to things you don’t know before, you may love it in the end. People tend to judge emerging things based on their appearance, but when we take the time to think about what is behind, we will always explore something new and worthwhile.&lt;/p&gt;
 </description>
         <pubDate>Sat, 27 May 2017 08:23:22 -0400</pubDate>
-        <link>http://hzhao.me/2017/05/27/To-My-Graduation.1.html</link>
-        <guid isPermaLink="true">http://hzhao.me/2017/05/27/To-My-Graduation.1.html</guid>
+        <link>http://hzhao.me/2017/05/27/To-My-Graduation.html</link>
+        <guid isPermaLink="true">http://hzhao.me/2017/05/27/To-My-Graduation.html</guid>
         
         
       </item>
@@ -279,6 +279,11 @@ From doc:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# return  [None,None,None]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;another example:&lt;br /&gt;
+&lt;script src=&quot;https://gist.github.com/HanchengZhao/69e152c12509806653061c95c66d0ada.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Here it returns the first node in a value list of a dictionary that has more than 1 node. &lt;code&gt;if node[1]&lt;/code&gt; will cause &lt;code&gt;IndexError: list index out of range&lt;/code&gt;, but &lt;code&gt;if node[1:]&lt;/code&gt; works.&lt;/p&gt;
 </description>
         <pubDate>Mon, 22 May 2017 10:13:22 -0400</pubDate>
         <link>http://hzhao.me/2017/05/22/Python-Collections-And-Tricks.html</link>
