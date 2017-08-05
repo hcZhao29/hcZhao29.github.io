@@ -84,6 +84,10 @@ OrderedDict([('pear', 1), ('orange', 2), ('banana', 3), ('apple', 4)])
 OrderedDict([('pear', 1), ('apple', 4), ('orange', 2), ('banana', 3)])
 {% endhighlight %}
 
+**OrderedDict.popitem(last=True)**
+The popitem() method for ordered dictionaries returns and removes a (key, value) pair. The pairs are returned in LIFO order if last is true or FIFO order if false.
+(This method could be very useful in LRU cache design)
+
 ### defaultdict
 This datatype provides a factory function to store customized key-value pairs into dictionaries.
 From doc:
