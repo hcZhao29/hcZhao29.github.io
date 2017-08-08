@@ -31,6 +31,31 @@ s[0] = 'X';
 alert(s); // s is still 'Test'    
 {% endhighlight %}
 
+
+### in operator
+
+**in** can only be used to check whether a prop is in an object like:
+
+{% highlight js %}
+// Arrays
+var trees = ['redwood', 'bay', 'cedar', 'oak', 'maple'];
+0 in trees        // returns true
+3 in trees        // returns true
+6 in trees        // returns false
+'bay' in trees    // returns false (you must specify the 
+                  // index number, not the value at that index)
+'length' in trees // returns true (length is an Array property)
+Symbol.iterator in trees // returns true (arrays are iterable, works only in ES2015+)
+
+// Predefined objects
+'PI' in Math          // returns true
+
+// Custom objects
+var mycar = {make: 'Honda', model: 'Accord', year: 1998};
+'make' in mycar  // returns true   
+{% endhighlight %}
+It has different function than 'in' in Python, whether **in** can be used to check element existence.
+
 ### Conditions
 JavaScript uses ```if () { ... } else { ... }``` to set conditions. But if there is only one statement in a block, ```{}``` can be removed. like
 {% highlight js %}
