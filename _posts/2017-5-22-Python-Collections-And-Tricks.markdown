@@ -179,3 +179,6 @@ another example:
 <script src="https://gist.github.com/HanchengZhao/69e152c12509806653061c95c66d0ada.js"></script>
 
 Here it returns the first node in a value list of a dictionary that has more than 1 node. `if node[1]` will cause `IndexError: list index out of range`, but `if node[1:]` works.
+
+### sort() and sorted()
+sort() sorts objects of list, it does not return list. So you can not use `''.join(list(str).sort())` to sort string. Instead, you can try `''.join(sorted(str))` because sorted will return a new sorted list from the items in iterable.

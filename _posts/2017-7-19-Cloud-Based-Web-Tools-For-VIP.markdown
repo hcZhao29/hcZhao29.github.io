@@ -15,7 +15,7 @@ The project that I have been working on recently is a cloud-based web tool for A
 
 So it is basically a CMS(content management system), but far more lightweight than Drupal, Sharepoint or WordPress. It is still an SPA (single page application), yet a huge upgrade of my last year's peer evaluation tool for UD.
 
-It has been a fun journey so far and I have tried many brand new stuffs and got new experience, so it is worth recording some thoughts along the way.
+It has been a fun journey so far and I have tried many brand new things and received new experience, so it is worth recording some thoughts along the way.
 
 ### Why cloud-based serverless architecture?
 
