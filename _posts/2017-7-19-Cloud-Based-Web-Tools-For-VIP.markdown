@@ -46,7 +46,7 @@ Here we set the cron job to run once a day to remove overdue announcement and pu
 
 
 
-### deploy
+<!-- ### deploy
 ### pagination
 ### auth
 - only redirect in the first login  
@@ -60,4 +60,4 @@ Here we set the cron job to run once a day to remove overdue announcement and pu
 ## mobx
 
 ## announcement
-### debounce
+### debounce -->
