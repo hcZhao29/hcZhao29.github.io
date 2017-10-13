@@ -44,6 +44,40 @@ Here, we choose the site [Cron Job](https://cron-job.org/en/) to handle cron wor
 
 Here we set the cron job to run once a day to remove overdue announcement and put scheduled ones in the page. It is important to add a key parameter after the url to avoid malicious access.
 
+### Render elements iteratively in React
+
+In React, components can be saved and passed as variables. It gives us a more flexible way to loop elements in an array, and interatively render components in the same format. Here is an example of 'formItem' component:
+
+{% highlight js %}
+
+let formItem = keys.map((key) => (
+    <tr key = {key}>
+        <td><Link to={`${team}/${key}`}>{forms[key].formName}</Link></td>
+        <td>{forms[key].startDate.substr(0,15)}</td>
+        <td>{forms[key].endDate.substr(0,15)}</td>
+        <td>{forms[key].editDate.substr(0,15)}</td>
+        <td>{key === defaultId ? 'default' : <a href="#" onClick = {(e) => this.setAsDefault(team, key,e) }>set as default</a>}</td>
+        <td><i className ="glyphicon glyphicon-remove" style = {{cursor:"pointer"}} id = {key} onClick = {() => this.handleRemove(team, key)}/></td>
+    </tr>
+    ));
+
+{% endhighlight %}
+then it wraps the component inside a table:
+```
+<tbody>
+ {formItem}
+</tbody>
+```
+after this, return the whole component inside a function called ```teamTablegenerate```, then generating a table for each team is possible inside render function:
+{% highlight js %}
+
+Object.keys(this.state.questions).map((team) => {
+    return this.teamCardgenerate(team)
+})
+
+{% endhighlight %}
+
+![FormList](/assets/article_images/2017-7-19-Web-tools/formlist.png)
 
 
 <!-- ### deploy
