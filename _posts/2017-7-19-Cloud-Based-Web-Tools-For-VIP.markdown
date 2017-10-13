@@ -62,7 +62,8 @@ let formItem = keys.map((key) => (
     ));
 
 {% endhighlight %}
-then it wraps the component inside a table:
+In es6, ```()``` after ```=>``` will be returned directly.
+Then it wraps the component inside a table:
 ```
 <tbody>
  {formItem}
@@ -72,7 +73,7 @@ after this, return the whole component inside a function called ```teamTablegene
 {% highlight js %}
 
 Object.keys(this.state.questions).map((team) => {
-    return this.teamCardgenerate(team)
+    return this.teamTablegenerate(team)
 })
 
 {% endhighlight %}
